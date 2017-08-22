@@ -3,7 +3,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	runSequence = require('run-sequence'),
 	ts = require('gulp-typescript'),
-	tsProject = ts.createProject('tsconfig.json --allowJs'),
+	tsProject = ts.createProject('tsconfig.json'),
 	del = require('del'),
 	useref = require('gulp-useref'),
 	cssnano = require('gulp-cssnano'),
@@ -70,5 +70,5 @@ gulp.task('watch', ['browserSync', 'sass', 'ts', 'movehtml'], () => {
 });
 
 gulp.task('default', () => {
-	runSequence('clean:dist', ['sass', 'ts', 'movehtml', 'watch']);
+	runSequence('clean:dist', ['useref', 'sass', 'ts', 'movehtml', 'watch']);
 });

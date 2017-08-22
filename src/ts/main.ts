@@ -1,6 +1,5 @@
-import * as moment from '../js/moment.min';
-// import * as d3 from '../js/d3.min';
-// import * as c3 from '../js/c3.min';
+// import * as moment from '../js/moment';
+
 function generateData(name: string, probes: number, divider = 5) {
 	let x : (string|number)[] = [];
 	let y : (string|number)[] = [];
@@ -11,7 +10,7 @@ function generateData(name: string, probes: number, divider = 5) {
 		// x[i] = 2000 + i;
 		// x[i] = x[i].toString();
 		// x[i] = moment().add(i, 'd').format();
-		x[i] = moment().add(i, 'd');
+		x[i] = (moment().add(i, 'd'));
 	}
 	let result = [x, y];
 	return result;

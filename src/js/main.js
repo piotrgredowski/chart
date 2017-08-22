@@ -1,8 +1,4 @@
-"use strict";
-exports.__esModule = true;
-var moment = require("../js/moment.min");
-// import * as d3 from '../js/d3.min';
-// import * as c3 from '../js/c3.min';
+// import * as moment from '../js/moment';
 function generateData(name, probes, divider) {
     if (divider === void 0) { divider = 5; }
     var x = [];
@@ -14,7 +10,7 @@ function generateData(name, probes, divider) {
         // x[i] = 2000 + i;
         // x[i] = x[i].toString();
         // x[i] = moment().add(i, 'd').format();
-        x[i] = moment().add(i, 'd');
+        x[i] = (moment().add(i, 'd'));
     }
     var result = [x, y];
     return result;
@@ -30,7 +26,7 @@ var chart = c3.generate({
     },
     data: {
         x: 'x',
-        columns: generateData('sin1', 100)
+        columns: generateData('sin1', 100),
     },
     axis: {
         x: {
@@ -38,7 +34,7 @@ var chart = c3.generate({
             tick: {
                 fit: false,
                 format: '%Y/%m/%d',
-                rotate: 30
+                rotate: 30,
             }
         },
         y: {
@@ -49,7 +45,7 @@ var chart = c3.generate({
         }
     },
     zoom: {
-        enabled: true
+        enabled: true,
     },
     point: {
         show: false,
